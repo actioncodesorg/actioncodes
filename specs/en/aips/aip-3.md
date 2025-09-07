@@ -10,7 +10,7 @@ This AIP defines how action codes are resolved to intents and how metadata flows
 
 ## Motivation
 
-To standardize how action codes translate into executable instructions and how metadata (title, description, parameters) flows through the protocol. This ensures consistent behavior across different implementations while allowing flexibility in how relayers and services handle code resolution.
+The motivation is to standardize how action codes translate into executable instructions, how metadata flows through the protocol, and how different validation modes ensure secure and flexible intent resolution. This ensures consistent behavior across implementations while allowing adaptability to various use cases.
 
 ## Specification
 
@@ -50,9 +50,13 @@ interface ActionCode<T> {
 
 The general flow for resolving action codes involves:
 
-1. **Code Validation**: Code is validated using signature verification (AIP-2)
-2. **Metadata Processing**: Optional metadata is processed according to the ActionCode structure
-3. **Intent Resolution**: Code is resolved to its associated intent based on the protocol specification
+1. **Code Validation**: Validate the action code using signature verification (per AIP-2) based on the mode:
+   - **Mode W**: Direct wallet signature of the code and associated metadata.
+   - **Mode A**: Delegated authenticator signature, verified via a wallet-signed Delegation Certificate (see AIP-7).
+   - **Mode I**: Issuer signature, verified via a wallet-signed Issuer Delegation (see AIP-8).
+
+2. **Metadata Processing**: Process optional metadata according to the ActionCode structure.
+3. **Intent Resolution**: Resolve the code to its associated intent based on the protocol specification.
 
 ### Metadata Flow
 
@@ -72,6 +76,7 @@ This AIP defines only the protocol-level concepts and data structures. Implement
 - Transaction attachment mechanisms
 - Infrastructure and deployment
 - Completion callbacks and webhooks
+- Messaging formats (e.g., announce strings or their verification)
 
 Are outside the scope of the protocol specification and left to individual implementations.
 
@@ -80,7 +85,7 @@ Are outside the scope of the protocol specification and left to individual imple
 - Action codes expire exactly at their 2-minute boundary
 - Metadata is not validated by the protocol but can be used by applications
 - Future versions may standardize specific intent types and metadata schemas
-- The protocol focuses on core specification, not implementation details
+- The protocol focuses on core validation mechanisms across modes, not implementation-specific messaging
 
 ## Appendix A: ActionCodeStatus Lifecycle
 
