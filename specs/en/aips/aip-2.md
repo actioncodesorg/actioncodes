@@ -10,7 +10,7 @@ This AIP defines the signature validation mechanism for Action Codes. Every acti
 
 ## Motivation
 
-To enable a fully decentralized, stateless protocol where users can generate and authorize action codes directly from their wallets. This eliminates the need for trusted authorities while maintaining security through cryptographic proof of user intent.
+To enable a fully decentralized, stateless protocol where users can generate and authorize action codes directly from their wallets. This eliminates the need for trusted authorities while maintaining security through cryptographic proof of user intent. This code authorisation mode is called _Mode W_.
 
 ## Specification
 

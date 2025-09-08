@@ -19,6 +19,17 @@ import { Buffer } from "buffer";
 
 export type ActionCodeStatus = 'pending' | 'resolved' | 'finalized' | 'expired' | 'error';
 
+export enum ActionCodeAuthMode {
+    /**
+     * The action code is signed by the user's own wallet.
+     */
+    W = 'wallet',
+    /**
+     * The action code is signed by a delegated auth certificate.
+     */
+    A = 'delegated_auth'
+}
+
 export interface ActionCodeMetadata {
     description?: string;
     params?: Record<string, any>;
