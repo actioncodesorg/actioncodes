@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://actioncodes.org/schemas/prefix-metadata-v1.json",
+  "title": "Action Codes Prefix Metadata v1",
+  "description": "Canonical metadata schema for Action Codes protocol prefixes",
+  "type": "object",
+  "required": [
+    "title",
+    "icon",
+    "description",
+    "label",
+    "intentCategories",
+    "contact"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "Represents the source of the action request (brand, app, or person)."
+    },
+    "icon": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(https?:)//.*\\.(svg|png|webp)$",
+      "description": "Absolute HTTP/HTTPS URL to an icon image (SVG, PNG, or WebP). Client must reject invalid URLs."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Information about the action, shown to users."
+    },
+    "label": {
+      "type": "string",
+      "maxLength": 30,
+      "pattern": "^[A-Z].*",
+      "description": "Text displayed on a user action button; should start with a verb, max 5 words."
+    },
+    "intentCategories": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Categories of actions this prefix may perform, e.g., payment, stake, vote."
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website for branding / verification purposes."
+    },
+    "contact": {
+      "type": "object",
+      "description": "Flexible contact information, e.g., email, telegram, discord.",
+      "additionalProperties": { "type": "string" },
+      "required": ["email"]
+    },
+    "schemaVersion": {
+      "type": "string",
+      "enum": ["1"],
+      "description": "Version of the metadata schema."
+    }
+  },
+  "additionalProperties": false
+}
