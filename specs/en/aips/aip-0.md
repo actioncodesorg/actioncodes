@@ -20,7 +20,7 @@ Each Action Code:
 - Includes metadata similar to Solana Pay fields (label, memo, and reference, etc.)
 - Is resolved through a provided REST API or SDK.
 - Is bound to a user’s wallet pubkey at creation or intent level.
-- May include a registered prefix, allowing integration with branded or categorized systems. See [AIP-5](./aip-5.md) for details.
+- ~~May include a registered prefix, allowing integration with branded or categorized systems. See [AIP-4](./aip-4.md) for details.~~
 - Codes can be generated directly in wallets, through the open SDK, or via the hosted interface at [app.ota.codes](https://app.ota.codes)
 
 ---

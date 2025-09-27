@@ -15,7 +15,7 @@ This document contains the official Action Codes specifications under AIPs (Acti
 - [AIP-1: Protocol Meta Format](./en/aips/aip-1.md)
 - [AIP-2: Authority Signature Validation](./en/aips/aip-2.md)
 - [AIP-3: Intent Resolution & Routing](./en/aips/aip-3.md)
-- [AIP-4: Prefix System](./en/aips/aip-4.md)
+- ~~[AIP-4: Prefix System](./en/aips/aip-4.md)~~
 
 ---
 

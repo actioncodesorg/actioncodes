@@ -19,12 +19,12 @@ To enable a fully decentralized, stateless protocol where users can generate and
 Each action code is generated through a deterministic process that requires the user to sign a specific message with their wallet:
 
 1. **Message Format**: `actioncodes:<code>:<timestamp>`
-   - `<code>`: The 8-digit action code with prefix or `DEFAULT` (empty string)
+   - `<code>`: The numeric action code
    - `<timestamp>`: Unix timestamp in milliseconds
 
 2. **Code Derivation**: 
    ```
-   code = hash(prefix + pubkey + timestamp + signature)
+   code = hash(pubkey + timestamp + signature)
    ```
    Where `signature` is the user's signature of the message above.
 
@@ -47,13 +47,6 @@ To validate an action code:
 - **TTL**: Exact 2-minute expiration (no drift tolerance)
 - **Validation**: Codes are only valid within their 2-minute time window
 
-### Prefix Normalization Rules
-
-1. **Case Insensitive**: All prefixes are normalized to uppercase
-2. **Alphanumeric Only**: Only A-Z and 0-9 characters are allowed
-3. **Length**: 3-12 characters
-4. **Reserved**: `DEFAULT` is reserved for the protocol
-
 ### ActionCode Object Format
 
 When resolved, an action code returns an ActionCode object:
@@ -61,7 +54,6 @@ When resolved, an action code returns an ActionCode object:
 ```typescript
 interface ActionCode {
   code: string;           // The 8-character action code
-  prefix: string;         // Normalized prefix
   pubkey: string;         // User's public key
   timestamp: number;      // Code generation timestamp
   signature: string;      // User's signature of the message

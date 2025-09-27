@@ -7,7 +7,7 @@
 
 ## Overview
 
-**This AIP has been dropped and is no longer in use.**
+**!! This AIP has been dropped and is no longer in use. !!**
 
 Prefix system was a trust layer enabling branded, verifiable, and auditable prefixes while keeping user UX simple (prefixless codes) but was dropped in favor of elasticity and decentralization.
 
