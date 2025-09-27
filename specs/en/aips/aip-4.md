@@ -1,19 +1,21 @@
 # AIP-4: Prefix System
 
 - **Author**: Action Codes Core Team  
-- **Status**: Draft  
+- **Status**: Dropped  
 - **Created**: 2025-06-29
-- **Updated**: 2025-09-14
+- **Updated**: 2025-09-27
 
 ## Overview
 
-This AIP defines prefixes in the Action Codes Protocol as a trust layer enabling branded, verifiable, and auditable prefixes while keeping user UX simple (prefixless codes).
+**This AIP has been dropped and is no longer in use.**
+
+Prefix system was a trust layer enabling branded, verifiable, and auditable prefixes while keeping user UX simple (prefixless codes) but was dropped in favor of elasticity and decentralization.
 
 **Key goals:**
 - Ensure prefix authenticity and authority verification
-- Support manual verification with future DAO/admin automation
+- Support manual verification with future DAO/admin automation  
 - Enable dynamic fees and governance
-- Fully cross-chain ready and relayer-agnostic
+- Fully cross-chain ready and relayer-agnostic  
 
 ## Motivation
 
