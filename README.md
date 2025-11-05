@@ -1,6 +1,6 @@
 # 🛡️ Action Codes Protocol
 
-![Coverage](https://img.shields.io/badge/coverage-98%-brightgreen)
+> Action Codes Protocol born in Colosseum Breakout Hackathon by securing a prize in infrastructure track. After hackathon we prepared production ready version of the protocol. So, we archive this codebase and continue work on [Action Codes Protocol v2](https://github.com/actioncodesorg/protocol-v2)
 
 **Action Codes Protocol** enables short-lived, cryptographically verifiable action codes that authorize blockchain transactions and intents without requiring live wallet sessions.
 
